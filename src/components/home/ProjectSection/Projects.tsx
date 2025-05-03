@@ -31,13 +31,13 @@ const ProjectsSection = () => {
 <div className="flex justify-center items-center py-6">
 <Button onClick={() => router.push('/projects')}
       className={cn(
-        "bg-gradient-to-r from-[#1A1A40] to-[#004DFF]",
+        "bg-gradient-to-r from-[#1A1A40] to-[#042164]",
         "text-white font-semibold",
-        "px-6 py-2 rounded-md w-1/5 cursor-pointer",
+        "px-6 py-2 rounded-md sm:w-1/5 cursor-pointer",
         "hover:opacity-90 transition"
       )}
     >
-      All Projects
+      See More
     </Button>
 </div>
 

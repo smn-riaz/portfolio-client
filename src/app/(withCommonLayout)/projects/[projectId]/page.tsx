@@ -15,7 +15,7 @@ const ProjectDetailsPage = async({params}:{params:Promise<{projectId:string}>}) 
    }
 
     return (
-        <div>
+        <div className='bg-[#010E14] text-white px-6 sm:px-24 py-18 pt-32 '>
             <ProjectDetails project={project} />
         </div>
     );

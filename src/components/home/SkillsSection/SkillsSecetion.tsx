@@ -32,14 +32,14 @@ const recentBooks = [
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-16 bg-[#0e1526] text-white pl-8 pr-16">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="skills" className="py-16 pt-32 bg-[#0e1526] text-white pl-8 pr-16">
+      <div className="max-w-7xl mx-auto ">
         {/* Section Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#f8f6f2] to-[#fdfbfb]"
+          className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r pb-6 from-[#f8f6f2] to-[#fdfbfb]"
         >
           Skills & Interests
         </motion.h2>
@@ -84,7 +84,7 @@ const SkillsSection = () => {
 
         {/* Soft Skills & Hobbies */}
        
-        <div className="flex justify-center w-full mx-8">
+        <div className="flex justify-center w-full mx-8 py-10">
 
   <div className="grid md:grid-cols-4 gap-8 w-full max-w-7xl">
     {/* Title */}

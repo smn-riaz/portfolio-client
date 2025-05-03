@@ -14,21 +14,9 @@ const TopBanner = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f1e44] to-[#091227] opacity-40 blur-3xl z-0" />
 
       {/* Personal Details */}
-      <div className="z-10 text-center mb-6">
-        <h1 className="text-3xl font-bold">Shahman Riaz</h1>
-        <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="mt-1"
-      >
-       <img
-  src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2000&pause=1000&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;MERN+Stack+Developer;Full+Stack+Developer;Lifelong+Learner+%F0%9F%93%9A;Code.+Create.+Repeat.&color=#3A0000&background=00000000"
-  alt="Typing animation"
-  className="mx-auto"
-/>
-
-      </motion.div>
+      <div className="z-10 text-center mb-8">
+        <h1 className="sm:text-5xl text-4xl sm:pt-10 font-serif font-bold">Shahman Riaz</h1>
+        
       </div>
 
       {/* Profile Image with Shadow */}
@@ -36,7 +24,7 @@ const TopBanner = () => {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative  z-10 w-50 h-50 rounded-full overflow-hidden border-4 border-[#1a2238] shadow-[0_0_60px_10px_rgba(255,255,255,0.05)]"
+        className="relative  z-10 w-50 h-50 py-10 rounded-full overflow-hidden border-4 border-[#1a2238] shadow-[0_0_60px_10px_rgba(255,255,255,0.05)]"
       >
         <Image
           src={riaz}
@@ -45,6 +33,7 @@ const TopBanner = () => {
           className="object-cover"
         />
       </motion.div>
+
 
       {/* Scrolling Skill Icons */}
    
@@ -77,6 +66,19 @@ const TopBanner = () => {
       </div>
     ))}
   </motion.div>
+  <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className=""
+      >
+       <img
+  src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2000&pause=1000&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;MERN+Stack+Developer;Full+Stack+Developer;Lifelong+Learner+%F0%9F%93%9A;Code.+Create.+Repeat.&color=#3A0000&background=00000000"
+  alt="Typing animation"
+  className="mx-auto"
+/>
+
+      </motion.div>
 </div>
 
 

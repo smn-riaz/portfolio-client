@@ -1,6 +1,9 @@
 
 import AboutMeSection from '@/components/home/AboutMeSection/AboutMeSection';
+import BlogSection from '@/components/home/BlogSection/BlogSection';
 import ContactSection from '@/components/home/ContactSection/ContactSection';
+import EducationSection from '@/components/home/EducationSection/EducationSection';
+import FooterSection from '@/components/home/FooterSection/FooterSection';
 import ProjectsSection from '@/components/home/ProjectSection/Projects';
 import SkillsSection from '@/components/home/SkillsSection/SkillsSecetion';
 import TopBanner from '@/components/home/TopBannerSection/TopBanner';
@@ -13,7 +16,13 @@ const HomePage = () => {
       <ProjectsSection />
       <AboutMeSection />
       <SkillsSection />
+      <EducationSection />
+
+<BlogSection />
+
       <ContactSection />
+ 
+      <FooterSection />
     </div>
   );
 };
