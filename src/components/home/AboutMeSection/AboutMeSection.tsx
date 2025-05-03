@@ -54,7 +54,7 @@ const AboutMeSection = () => {
             <div className="mt-8">
               <Button
                 onClick={() => router.push("/resume")}
-                className="relative px-8 py-6 text-md bg-[#e09a3f] text-white cursor-pointer font-semibold rounded-xl overflow-hidden transition-all duration-300 group"
+                className="relative px-8 py-6 text-md bg-[#493214] text-white cursor-pointer font-semibold rounded-xl overflow-hidden transition-all duration-300 group"
               >
                 <span className="z-10 flex items-center relative">RESUME</span>
 
