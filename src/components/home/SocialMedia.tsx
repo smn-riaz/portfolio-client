@@ -12,7 +12,7 @@ import Link from 'next/link'
       <div className="space-y-4 w-[25px]">
        <div>
        <Link
-          href="https://github.com/yourusername"
+          href="https://github.com/smn-riaz"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-[#6e40c9] transition"
@@ -22,7 +22,7 @@ import Link from 'next/link'
        </div>
        <div>
        <Link
-          href="https://linkedin.com/in/yourprofile"
+          href="https://www.linkedin.com/in/shahman-riaz"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-[#0A66C2] transition"
@@ -32,7 +32,7 @@ import Link from 'next/link'
        </div>
         <div>
         <Link
-          href="https://twitter.com/yourhandle"
+          href="https://x.com/smn_riaz"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-[#1DA1F2] transition"
@@ -42,7 +42,7 @@ import Link from 'next/link'
         </div>
         <div>
         <Link
-          href="mailto:youremail@example.com"
+          href="mailto:shahmanriaz07@gmail.com"
           className="text-white hover:text-pink-500 transition"
         >
           <Mail size={20} />
@@ -50,7 +50,7 @@ import Link from 'next/link'
         </div>
         <div>
         <Link
-          href="https://yourportfolio.com"
+          href="https://shahmanriaz.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white hover:text-green-400 transition"

@@ -36,7 +36,7 @@ const TopBanner = () => {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative  z-10 w-40 h-40 rounded-full overflow-hidden border-4 border-[#1a2238] shadow-[0_0_60px_10px_rgba(255,255,255,0.05)]"
+        className="relative  z-10 w-50 h-50 rounded-full overflow-hidden border-4 border-[#1a2238] shadow-[0_0_60px_10px_rgba(255,255,255,0.05)]"
       >
         <Image
           src={riaz}
@@ -48,7 +48,7 @@ const TopBanner = () => {
 
       {/* Scrolling Skill Icons */}
    
-      <div className="w-[40vw] relative overflow-hidden">
+      <div className="md:w-[30vw] sm:w-[60vw] w-[80vw] relative overflow-hidden">
   {/* Left white fade */}
   <div className="absolute top-0 left-0 h-full w-10 z-20 bg-gradient-to-r from-[#50505548] to-transparent pointer-events-none" />
   
@@ -60,7 +60,7 @@ const TopBanner = () => {
     transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
     className="flex gap-6 py-4 px-2 min-w-max z-10 rounded-sm"
   >
-    {/* Double the icons for seamless scroll */}
+  
     {[...skills, ...skills].map((icon, index) => (
       <div
         key={index}

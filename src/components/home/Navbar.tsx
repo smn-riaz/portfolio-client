@@ -6,33 +6,37 @@ import { Button } from '@/components/ui/button'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import logo from '../../assets/logo.png'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About Me', href: '#about' },
-  { name: 'Work', href: '#work' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Gallery', href: '#gallery' },
+  { name: 'Home', href: '/' },
+  { name: 'About Me', href: '/#about-me' },
+  { name: 'Project', href: '/projects' },
+  { name: 'Skill', href: '/#skills' },
+  { name: 'Education', href: '/#education' },
+  { name: 'Contact', href: '/#contact' },
 ]
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const router = useRouter()
+
   return (
     <nav className="bg-[#122041] border border-[#2e3c63] rounded-2xl shadow-lg max-w-7xl mx-auto mt-6 px-6 py-3">
       <div className="flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
+ 
+        <Link href="/" className="flex items-center gap-2">
           <div className="bg-[#5845c5] rounded-full ">
             <span className="text-white text-lg font-bold">
                 <Image className='rounded-full' src={logo} alt="Riaz" width={40} height={40} />
             </span>
           </div>
           <span className="text-white font-semibold text-lg">Shahman Riaz</span>
-        </div>
+        </Link>
 
-        {/* Desktop Nav */}
+    
         <div className="hidden md:flex gap-6 text-gray-300 font-medium text-sm">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href} className="hover:text-white transition-colors">
@@ -41,14 +45,24 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA Button */}
+ 
         <div className="hidden md:block">
-          <Button className="bg-[#5845c5] text-white cursor-pointer hover:bg-[rgb(70,52,170)] font-semibold rounded-xl">
-            Let’s Talk <ArrowUpRight className="ml-1 w-4 h-4" />
-          </Button>
+        <Button
+  onClick={() => router.push("/resume")}
+  className="relative bg-[#261d55] text-white cursor-pointer font-semibold rounded-xl overflow-hidden transition-all duration-300 group"
+>
+  <span className="z-10 flex items-center relative">
+    RESUME <ArrowUpRight className="ml-1 w-4 h-4" />
+  </span>
+
+  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white/30 to-white/0 opacity-100 transition-opacity duration-500 blur-sm animate-pulse pointer-events-none" />
+
+  <span className="absolute inset-0 bg-[#7a4fac] shadow-[0_0_20px_#5845c5] opacity-40 pointer-events-none" />
+</Button>
+
         </div>
 
-        {/* Mobile Menu Toggle */}
+    
         <button
           className="md:hidden text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -57,7 +71,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+
       {mobileMenuOpen && (
         <div className="mt-4 md:hidden flex flex-col gap-4 text-gray-300 font-medium text-sm">
           {navLinks.map((link) => (
@@ -71,8 +85,8 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <Button className="mt-2 bg-[#ff5722] text-white hover:bg-[#e64a19] font-semibold rounded-xl w-fit">
-            Let’s Talk <ArrowUpRight className="ml-1 w-4 h-4" />
+          <Button onClick={() => router.push("/resume")} className="mt-2  font-semibold bg-[#5845c5] text-white cursor-pointer hover:bg-[rgb(70,52,170)] rounded-xl w-fit">
+            RESUME <ArrowUpRight className="ml-1 w-4 h-4" />
           </Button>
         </div>
       )}

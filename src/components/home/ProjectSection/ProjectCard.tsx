@@ -1,10 +1,12 @@
+"use client"
+
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 
-const ProjectCard = ({ image, title, description, technologies,id }: any) => {
+const ProjectCard = ({ image, title, description, technologies,id }:{image:string, title:string, description:string, technologies:string[],id:string}) => {
     const router = useRouter()
   return (
     <motion.div
@@ -23,8 +25,8 @@ const ProjectCard = ({ image, title, description, technologies,id }: any) => {
       />
     </div>
   
-    <div className="px-5 py-4 flex flex-col justify-between h-full">
-      <h2 className="text-xl font-extrabold text-center text-white drop-shadow-sm tracking-wide mb-2">
+    <div className="px-5 pt-2 flex flex-col justify-around h-full">
+      <h2 className="sm:text-xl text-lg font-extrabold text-center text-white drop-shadow-sm tracking-wide">
         {title}
       </h2>
   
@@ -32,7 +34,7 @@ const ProjectCard = ({ image, title, description, technologies,id }: any) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="flex flex-wrap justify-center gap-2 mb-3"
+        className="flex flex-wrap justify-center gap-2"
       >
         {technologies.slice(0, 4).map((tech: string, index: number) => (
           <motion.span
@@ -45,7 +47,7 @@ const ProjectCard = ({ image, title, description, technologies,id }: any) => {
         ))}
       </motion.ul>
   
-      <p className="text-gray-300 text-sm text-justify leading-relaxed ">
+      <p className="text-gray-300 text-sm  ">
         {description}
       </p>
   

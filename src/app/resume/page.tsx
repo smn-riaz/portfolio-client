@@ -1,9 +1,10 @@
+import PdfViewer from '@/components/resume/resume';
 import React from 'react';
 
 const ResumePage = () => {
     return (
-        <div>
-            
+        <div className=''>
+            <PdfViewer />
         </div>
     );
 };
