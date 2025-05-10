@@ -1,90 +1,149 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import riaz from '../../../assets/riaz.jpg'
-import { skills } from '@/constants/skilIsmages'
-
-
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import riaz from "../../../assets/riaz.jpg";
+import { skills } from "@/constants/skilIsmages";
 
 const TopBanner = () => {
+  const bannerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".headline", {
+        y: -80,
+        opacity: 0,
+        duration: 1.2,
+        ease: "expo.out",
+      });
+      gsap.from(".subtext", {
+        y: 40,
+        opacity: 0,
+        duration: 1.2,
+        delay: 0.4,
+        ease: "expo.out",
+      });
+      gsap.from(".skills-circle", {
+        opacity: 0,
+        scale: 0.5,
+        duration: 1.5,
+        delay: 0.8,
+        ease: "expo.out",
+      });
+    }, bannerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative min-h-screen bg-[#091227] text-white flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f1e44] to-[#091227] opacity-40 blur-3xl z-0" />
-
-      {/* Personal Details */}
-      <div className="z-10 text-center mb-8">
-        <h1 className="sm:text-5xl text-4xl sm:pt-10 font-serif font-bold">Shahman Riaz</h1>
-        
+    <section
+      ref={bannerRef}
+      className="relative min-h-screen bg-[#0A0E17] text-white overflow-hidden flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 lg:px-12 py-16 gap-12"
+    >
+      {/* Background gradients */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-[#1E215D] to-[#BE29EC] opacity-30 rounded-[60%] blur-[120px] left-[-20%] top-[-20%]" />
+        <div className="absolute w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] bg-gradient-to-tr from-[#3F76FF] to-[#61F3F3] opacity-20 rounded-[50%] blur-[120px] right-[-20%] bottom-[-20%]" />
       </div>
 
-      {/* Profile Image with Shadow */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative  z-10 w-50 h-50 py-10 rounded-full overflow-hidden border-4 border-[#1a2238] shadow-[0_0_60px_10px_rgba(255,255,255,0.05)]"
-      >
-        <Image
-          src={riaz}
-          alt="Profile"
-          fill
-          className="object-cover"
-        />
-      </motion.div>
+      {/* Left side: Image and rotating skills */}
+      <div className="relative flex justify-center items-center w-full lg:w-1/2 min-h-[300px] sm:min-h-[400px]">
+        <motion.div
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+          className="skills-circle absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] md:w-[350px] md:h-[350px] rounded-full border border-[#ffffff10] flex items-center justify-center"
+        >
+          <div className="relative w-full h-full">
+            {skills.slice(0, 8).map((icon, index) => {
+              const angle = (360 / 8) * index;
+              const radius = 140; // smaller for small screens
+              const x = radius * Math.cos((angle * Math.PI) / 180);
+              const y = radius * Math.sin((angle * Math.PI) / 180);
+              return (
+                <motion.div
+                  key={index}
+                  className="absolute w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full"
+                  style={{
+                    top: `calc(50% + ${y}px - 1.5rem)`,
+                    left: `calc(50% + ${x}px - 1.5rem)`,
+                    backgroundColor: icon.color,
+                  }}
+                  whileHover={{ scale: 1.3, rotate: 12 }}
+                >
+                  <Image
+                    src={icon.image}
+                    alt={`Skill ${index}`}
+                    width={24}
+                    height={24}
+                    className="grayscale hover:grayscale-0 transition duration-300 rounded-md"
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
 
+        {/* Center Profile Image */}
+        <div className="absolute z-10 w-50 h-50 sm:w-55 sm:h-55 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-[#ffffff1a] shadow-2xl">
+          <div className="relative w-full h-full">
+            <Image
+              src={riaz}
+              alt="Shahman Riaz"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
 
-      {/* Scrolling Skill Icons */}
-   
-      <div className="md:w-[30vw] sm:w-[60vw] w-[80vw] relative overflow-hidden">
-  {/* Left white fade */}
-  <div className="absolute top-0 left-0 h-full w-10 z-20 bg-gradient-to-r from-[#50505548] to-transparent pointer-events-none" />
-  
-  {/* Right white fade */}
-  <div className="absolute top-0 right-0 h-full w-10 z-20 bg-gradient-to-l from-[#50505548] to-transparent pointer-events-none" />
-  <motion.div
-    initial={{ x: 0 }}
-    animate={{ x: '-50%' }}
-    transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
-    className="flex gap-6 py-4 px-2 min-w-max z-10 rounded-sm"
+      {/* Right side: Text */}
+     <div className="lg:w-1/2 flex flex-col items-center lg:items-center text-center z-20 space-y-4 max-w-xl">
+  {/* Name */}
+  <h1
+    className="headline text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight"
+    style={{ textShadow: "0 12px 15px rgba(255, 255, 255, 0.35)" }}
   >
-  
-    {[...skills, ...skills].map((icon, index) => (
-      <div
-        key={index}
-        style={{ backgroundColor: icon.color }}
-        className="rounded-xl p-1  flex items-center justify-center shadow-md"
-      >
-        <Image
-          src={icon.image}
-          alt={`Skill ${index}`}
-          width={25}
-          height={25}
-          className="grayscale rounded-md hover:grayscale-0 transition duration-300"
-        />
-      </div>
-    ))}
-  </motion.div>
-  <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className=""
-      >
-       <img
-  src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2000&pause=1000&center=true&vCenter=true&width=435&lines=Front-End+Web+Developer;MERN+Stack+Developer;Full+Stack+Developer;Lifelong+Learner+%F0%9F%93%9A;Code.+Create.+Repeat.&color=#3A0000&background=00000000"
-  alt="Typing animation"
-  className="mx-auto"
-/>
+    Shahman Riaz
+  </h1>
 
-      </motion.div>
+  {/* Role & Title */}
+  <div className="w-full flex justify-center">
+    <div className="space-y-2 py-4 text-center">
+      <p className="text-base sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6F61] to-[#3F76FF] tracking-wide">
+        ❝ Frontend Developer
+      </p>
+      <p className="text-base sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3F76FF] to-[#BE29EC] tracking-wide">
+        MERN Stack Enthusiast ❞
+      </p>
+    </div>
+  </div>
+
+  {/* Description */}
+  <p className="subtext text-gray-300 text-sm sm:text-lg leading-relaxed max-w-md">
+   Passionate about performance-driven, responsive, and future-ready web development.
+  </p>
+
+  {/* Typing Animation */}
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1.5 }}
+    className="mt-4 w-full flex justify-center"
+  >
+    <img
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2000&pause=1000&center=true&vCenter=true&width=500&lines=Developer.+Creator.+Problem+Solver.;Javascript+Lover+%F0%9F%92%96+;Always+Learning+%F0%9F%93%9A"
+      alt="Typing animation"
+      className="mx-auto"
+    />
+  </motion.div>
 </div>
 
-
-
     </section>
-  )
-}
+  );
+};
 
-export default TopBanner
+export default TopBanner;

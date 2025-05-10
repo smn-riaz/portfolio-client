@@ -3,7 +3,7 @@ import React from 'react';
 
 const ResumePage = () => {
     return (
-        <div className=''>
+        <div>
             <PdfViewer />
         </div>
     );

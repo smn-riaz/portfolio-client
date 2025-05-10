@@ -174,7 +174,7 @@ export const projectsInfo = [
     },
     images: {
       fullScreen: "https://i.ibb.co.com/Fq534s1v/screencapture-medihelp-5c899-web-app-2025-05-03-09-33-37.png",
-      topBanner: "https://i.ibb.co.com/W4gKHDv1/topbannar.png",
+      topBanner: "https://i.ibb.co.com/20GHMPdF/topbbbb.png",
       products: "https://i.ibb.co.com/JwctDq2t/screencapture-medihelp-5c899-web-app-doctors-2025-05-03-09-35-12.png",
       login: "https://i.ibb.co.com/1YnNjL15/screencapture-medihelp-5c899-web-app-login-2025-05-03-09-34-39.png",
 
