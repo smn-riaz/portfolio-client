@@ -34,7 +34,7 @@ export default function ContactSection() {
   }
 
   return (
-    <div id="contact" className="flex justify-center w-full px-6 py-28 pt-32 bg-[#0E1526]">
+    <div id="contact" className="flex justify-center mx-auto xl:mx-w-[1300px] w-full px-6 pb-16 pt-8">
       <div className="grid md:grid-cols-4 gap-8 w-full max-w-7xl">
         <div className="col-span-1" />
 
@@ -44,8 +44,9 @@ export default function ContactSection() {
          
 
           {/* Title */}
-          <h2 className="text-3xl font-bold text-center text-[#ffffff] mb-6 font-sans">
-            Contact Me
+           <h2 className="text-3xl font-bold font-sans text-center text-[#ffffff] mb-6 flex items-center justify-center gap-3">
+           
+          CONTACT ME
           </h2>
 
           {/* Form */}

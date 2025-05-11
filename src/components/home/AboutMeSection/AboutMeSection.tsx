@@ -10,9 +10,9 @@ const AboutMeSection = () => {
   return (
     <section
       id="about-me"
-      className="py-16 mt-16 bg-gradient-to-r from-[#24292F] to-[#4A4F63] text-white"
+      className="py-10 xl:pt-14 bg-gradient-to-r mx-auto from-[#24292F] to-[#4a4f6357] text-white"
     >
-      <div className="max-w-7xl mx-auto px-6 pt-16">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="text-4xl pr-4 font-extrabold tracking-tight sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#a38557] to-[#ff5b29]">
             Who I Am ?

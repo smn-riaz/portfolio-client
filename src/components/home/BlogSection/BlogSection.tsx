@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { FaExternalLinkAlt, FaReact, FaJsSquare, FaPenNib } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaReact, FaJsSquare } from 'react-icons/fa'
 
 import react from '../../../assets/react.png'
 import js from '../../../assets/js.jpg'
@@ -33,12 +33,13 @@ export default function BlogSection() {
   ]
 
   return (
-    <section id="blogs" className="w-full bg-[#0E1526] py-16 pt-32 px-6">
+    <section id="blogs" className="w-full mx-auto xl:max-w-[1300px] px-6 py-12">
       <div className="max-w-7xl mx-auto text-center">
         
-        <h2 className="text-3xl font-bold text-white mb-10 flex items-center justify-center gap-3">
-          <FaPenNib className="text-[#60A5FA]" /> Latest Blogs
-        </h2>
+        <h2 className="text-3xl font-bold font-sans text-center text-[#ffffff] mb-6 flex items-center justify-center gap-3">
+           
+            BLOGS
+          </h2>
        
         <div className="flex justify-center items-center">
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-3/4 max-w-7xl">

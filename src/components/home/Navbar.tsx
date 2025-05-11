@@ -7,7 +7,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import logo from '../../assets/logo.png'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-
+import { motion } from "framer-motion";
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -25,7 +25,7 @@ export default function Navbar() {
   const router = useRouter()
 
   return (
-    <nav className="bg-[#122041] border border-[#2e3c63] rounded-2xl shadow-lg max-w-7xl mx-auto mt-6 px-6 py-3">
+    <nav className="bg-[#122041] border border-[#2e3c63] rounded-2xl shadow-2xl max-w-[1300] mx-auto px-6 py-3">
       <div className="flex items-center justify-between">
  
         <Link href="/" className="flex items-center gap-2">
@@ -47,21 +47,33 @@ export default function Navbar() {
         </div>
 
  
-        <div className="hidden md:block">
+       <div className="hidden md:block">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.98 }}
+      >
         <Button
-  onClick={() => router.push("/resume")}
-  className="relative bg-[#261d55] text-white cursor-pointer font-semibold rounded-xl overflow-hidden transition-all duration-300 group"
->
-  <span className="z-10 flex items-center relative">
-    RESUME <ArrowUpRight className="ml-1 w-4 h-4" />
-  </span>
+          onClick={() => router.push("/resume")}
+          className="relative bg-[#261d55] text-white font-semibold rounded-xl overflow-hidden transition-all duration-300 group px-6 py-2"
+        >
+          <span className="relative z-10 flex items-center">
+            RESUME
+            <ArrowUpRight className="ml-1 w-4 h-4" />
+          </span>
 
-  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white/30 to-white/0 opacity-100 transition-opacity duration-500 blur-sm animate-pulse pointer-events-none" />
+          {/* Always-visible shimmer */}
+          <span className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-slide blur-sm pointer-events-none" />
 
-  <span className="absolute inset-0 bg-[#7a4fac] shadow-[0_0_20px_#5845c5] opacity-40 pointer-events-none" />
-</Button>
+          {/* Glow background */}
+          <span className="absolute inset-0 bg-[#7a4fac] shadow-[0_0_30px_#7a4fac] opacity-30 pointer-events-none rounded-xl" />
+        </Button>
+      </motion.div>
+    </div>
 
-        </div>
+
 
     
         <button

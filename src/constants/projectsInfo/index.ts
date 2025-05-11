@@ -15,8 +15,8 @@ export const projectsInfo = [
       "Admins can process and update the status of customer orders."
     ],
     github: {
-      frontend: "https://github.com/smn-riaz/medimart-6-mediCommerce-client",
-      backend: "https://github.com/smn-riaz/medimart-6-mediCommerce-server",
+      frontend: "https://github.com/smn-riaz/medicommerce-frontend",
+      backend: "https://github.com/smn-riaz/medicommerce-backend",
     },
     live: {
       frontend: "https://medicommerce-client.vercel.app",
@@ -93,8 +93,8 @@ export const projectsInfo = [
       "Admins can manage bicycles, users, and orders."
     ],
     github: {
-      frontend: "https://github.com/smn-riaz/biCycle-store-frontend-4",
-      backend: "https://github.com/smn-riaz/biCycle-store-backend-4",
+      frontend: "https://github.com/smn-riaz/cyclehouse-frontend",
+      backend: "https://github.com/smn-riaz/cyclehouse-backend",
     },
     live: {
       frontend: "https://bicycle-store-assignment4-client.vercel.app",
@@ -165,8 +165,8 @@ export const projectsInfo = [
       "Information about doctors and available services is also accessible."
     ],
     github: {
-      frontend: "https://github.com/smn-riaz/mediHelp-hospital-webapp",
-      backend: "https://github.com/smn-riaz/medihelp-server",
+      frontend: "https://github.com/smn-riaz/medihelp-frontend",
+      backend: "https://github.com/smn-riaz/medihelp-backend",
     },
     live: {
       frontend: "https://medihelp-5c899.web.app",

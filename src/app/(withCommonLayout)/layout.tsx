@@ -11,7 +11,7 @@ const WithCommonLayout = ({ children }: { children: React.ReactNode }) => {
     <main className="relative">
       {/* Social Icons on Left Center */}
 
-      <div className="fixed top-[1vh] transform w-full z-50">
+      <div className="fixed transform w-full z-50">
         { <Navbar />}
       </div>
 

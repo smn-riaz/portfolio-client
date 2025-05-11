@@ -36,7 +36,7 @@ const ProjectsSkills = ({ selectedSkill, setSelectedSkill }: { selectedSkill: st
   }, []);
 
   return (
-    <div className="relative w-full px-4 py-6 bg-[#0c1022]">
+    <div className="relative w-full px-4 py-4 rounded-lg bg-[#0c1022]">
       <div className="flex items-center justify-between mb-4 gap-4">
         <button
           onClick={() => scroll("left")}

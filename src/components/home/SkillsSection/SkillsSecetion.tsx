@@ -2,24 +2,34 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { skills } from "@/constants/skilIsmages";
-import { FaUserAlt, FaRegCommentAlt, FaLightbulb, FaHandsHelping, FaPuzzlePiece, FaSearch, FaPlane, FaBookOpen } from 'react-icons/fa';
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import {
+  FaUserAlt,
+  FaRegCommentAlt,
+  FaLightbulb,
+  FaHandsHelping,
+  FaPuzzlePiece,
+  FaSearch,
+  FaPlane,
+  FaBookOpen,
+} from "react-icons/fa";
+
+import { skills } from "@/constants/skilIsmages";
 
 const softSkills = [
-  { skill: "Fluent in English", icon: <FaRegCommentAlt className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Team Collaboration", icon: <FaUserAlt className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Effective Communication", icon: <FaRegCommentAlt className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Patience", icon: <FaHandsHelping className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Critical Thinking", icon: <FaLightbulb className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Problem-Solving Mindset", icon: <FaPuzzlePiece className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Always Try to Solve Problems", icon: <FaSearch className="h-5 w-5 text-[#FACC15]" /> },
-  { skill: "Love Solving Programming Challenges", icon: <FaLightbulb className="h-5 w-5 text-[#FACC15]" /> },
+  { skill: "Fluent in English", icon: <FaRegCommentAlt className="text-yellow-400" /> },
+  { skill: "Team Collaboration", icon: <FaUserAlt className="text-yellow-400" /> },
+  { skill: "Effective Communication", icon: <FaRegCommentAlt className="text-yellow-400" /> },
+  { skill: "Patience", icon: <FaHandsHelping className="text-yellow-400" /> },
+  { skill: "Critical Thinking", icon: <FaLightbulb className="text-yellow-400" /> },
+  { skill: "Problem-Solving Mindset", icon: <FaPuzzlePiece className="text-yellow-400" /> },
+  { skill: "Always Try to Solve Problems", icon: <FaSearch className="text-yellow-400" /> },
+  { skill: "Love Solving Programming Challenges", icon: <FaLightbulb className="text-yellow-400" /> },
 ];
 
 const hobbies = [
-  { hobby: "Traveling & Exploring New Places", icon: <FaPlane className="h-5 w-5 text-[#6EE7B7]" /> },
+  { hobby: "Traveling & Exploring New Places", icon: <FaPlane className="text-teal-300" /> },
 ];
 
 const recentBooks = [
@@ -29,127 +39,120 @@ const recentBooks = [
 ];
 
 const SkillsSection = () => {
-  const skillGridRef = useRef(null);
+  const techGridRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(skillGridRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out" });
+    gsap.fromTo(techGridRef.current, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 });
   }, []);
 
   return (
-    <section id="skills" className="py-16 pt-32 bg-[#0e1526] text-white px-4 md:px-8 lg:px-16">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="px-4 md:px-12 py-12 pt-20 mx-auto text-white xl:max-w-[1300px]">
+      
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r pb-6 from-[#f8f6f2] to-[#fdfbfb]"
+          className="text-4xl font-bold text-center bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent mb-12"
         >
-          Skills & Interests
+           <h2 className="text-3xl font-sans font-bold text-center text-[#ffffff] mb-6 flex items-center justify-center gap-3">
+           
+           SKILLS & INTEREST
+          </h2>
         </motion.h2>
 
-        <div>
-          <h3 className="text-2xl font-semibold mb-2 text-[#ebe6df] text-center flex justify-center items-center gap-2">
-            <hr className="w-1/12" /> Technologies <hr className="w-1/12" />
-          </h3>
-
-          <div ref={skillGridRef} className="grid py-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
-            {skills.map((icon, idx) => (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                key={idx}
-                className="group bg-gradient-to-br from-[#1f2937] to-[#0f172a] text-white p-3 rounded-2xl shadow-lg w-full h-full flex flex-col items-center justify-center transition-transform hover:shadow-2xl"
-              >
-                <div className="flex justify-center items-center gap-x-2">
-                  <div className="bg-white rounded-xl shadow-md mb-4">
-                    <Image
-                      src={icon.image}
-                      alt={icon.name}
-                      width={45}
-                      height={45}
-                      title={icon.name}
-                      className="object-contain"
-                    />
-                  </div>
-                  <h4 className="text-center text-md font-semibold text-gray-100">
-                    {icon.name}
-                  </h4>
-                </div>
-                <p className="text-sm text-center text-gray-400">
-                  {icon.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex justify-center w-full py-10">
-          <div className="grid md:grid-cols-4 gap-8 w-full max-w-7xl">
-            <div className="col-span-1"></div>
-            <div className="col-span-1">
-              <h3 className="text-2xl font-semibold mb-2 text-[#ebe6df] text-center flex justify-center items-center gap-2">
-                <hr className="w-1/12" /> Soft Skills <hr className="w-1/12" />
-              </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Left Column – Technology Skills */}
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            transition={{ duration: 0.7 }}
+            ref={techGridRef}
+            className="lg:col-span-7 flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-6 shadow-xl"
+          >
+           <div>
+             <h3 className="text-3xl font-semibold text-center text-slate-200 pb-8">🛠 Technologies</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {skills.map((icon, idx) => (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  key={idx}
+                  className="bg-[#1e293b] cursor-pointer p-4 rounded-xl flex flex-col items-center justify-center transition-all hover:bg-[#0f172a]"
+                >
+                  <Image
+                    src={icon.image}
+                    alt={icon.name}
+                    width={45}
+                    height={45}
+                    title={icon.name}
+                    className="object-contain mb-2"
+                  />
+                  <span className="text-sm text-gray-200 text-center font-semibold ">{icon.name}</span>
+                </motion.div>
+              ))}
             </div>
+           </div>
+          </motion.div>
+
+          {/* Right Column – Soft Skills + Interests */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            {/* Soft Skills Card */}
             <motion.div
               whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 30 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br col-span-1 from-[#1f2937] to-[#111827] rounded-3xl shadow-xl border border-[#334155] p-6 hover:scale-[1.015] hover:shadow-2xl"
+              initial={{ opacity: 0, y: 40 }}
+              transition={{ duration: 0.7 }}
+              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-6 shadow-xl"
             >
-              <ul className="space-y-3 pl-4 text-gray-300 text-base list-disc">
+              <h3 className="text-xl font-semibold text-yellow-400 mb-4 text-center underline decoration-yellow-300/50 underline-offset-4">
+                Soft Skills
+              </h3>
+              <ul className="space-y-3">
                 {softSkills.map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 hover:text-[#FACC15] transition-all">
+                  <li key={i} className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition">
                     {item.icon}
                     {item.skill}
                   </li>
                 ))}
               </ul>
             </motion.div>
-            <div className="col-span-1"></div>
-          </div>
-        </div>
 
-        <div className="flex justify-center w-full">
-          <div className="grid md:grid-cols-4 gap-8 w-full max-w-7xl">
-            <div className="col-span-1"></div>
-            <div className="col-span-1">
-              <h3 className="text-2xl font-semibold mb-2 text-[#ebe6df] text-center flex justify-center items-center gap-2">
-                <hr className="w-1/12" /> Hobbies & Books <hr className="w-1/12" />
-              </h3>
-            </div>
+            {/* Hobbies & Books */}
             <motion.div
               whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 30 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br col-span-1 from-[#1e293b] to-[#0f172a] rounded-3xl shadow-xl border border-[#334155] p-6 hover:scale-[1.015] hover:shadow-2xl"
+              initial={{ opacity: 0, y: 40 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-6 shadow-xl"
             >
-              <div className="mb-6">
-                <h4 className="text-xl font-semibold text-[#6EE7B7] mb-3">🌍 Hobbies</h4>
-                <ul className="space-y-3 pl-4 text-gray-300 text-base list-disc">
+              <h3 className="text-xl font-semibold text-teal-300 mb-4 text-center underline decoration-teal-200/50 underline-offset-4">
+                Hobbies & Books
+              </h3>
+
+              <div className="mb-4">
+                <h4 className="font-semibold text-teal-300 mb-2">🌍 Hobbies</h4>
+                <ul className="space-y-2 text-gray-300">
                   {hobbies.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 hover:text-[#34D399] transition-all">
+                    <li key={i} className="flex items-center gap-3 hover:text-teal-300 transition">
                       {item.icon}
                       {item.hobby}
                     </li>
                   ))}
                 </ul>
               </div>
+
               <div>
-                <h4 className="text-xl font-semibold text-[#34D399] mb-3">📚 Last 3 Books I Read</h4>
-                <ul className="space-y-2 pl-4 text-gray-300 text-base">
+                <h4 className="font-semibold text-teal-300 mb-2">📚 Last 3 Books I Read</h4>
+                <ul className="space-y-2 text-gray-300">
                   {recentBooks.map((book, i) => (
-                    <li key={i} className="flex items-center gap-2 hover:text-[#6EE7B7] transition-all">
-                      <FaBookOpen />
+                    <li key={i} className="flex items-center gap-2 hover:text-teal-300 transition">
+                      <FaBookOpen className="text-teal-300" />
                       {book}
                     </li>
                   ))}
                 </ul>
               </div>
             </motion.div>
-            <div className="col-span-1"></div>
           </div>
         </div>
-      </div>
+   
     </section>
   );
 };

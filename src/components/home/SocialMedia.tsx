@@ -1,17 +1,32 @@
+import { motion } from "framer-motion";
+import Link from "next/link";
 import {
-    Github,
-    Linkedin,
-    Twitter,
-    Mail,
-    Globe,
-  } from 'lucide-react'
-import Link from 'next/link'
-  
-  const SocialMedia = () => {
-    return (
-      <div className="space-y-4 w-[25px]">
-       <div>
-       <Link
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  Globe,
+  Phone,
+} from "lucide-react";
+
+const bounceKeyframes = {
+  y: [0, -5, 0],
+};
+
+export default function SocialMedia() {
+  return (
+    <div className="space-y-8 w-[25px]">
+      <motion.div
+        animate={bounceKeyframes}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: 0,
+        }}
+      >
+        <Link
           href="https://github.com/smn-riaz"
           target="_blank"
           rel="noopener noreferrer"
@@ -19,9 +34,19 @@ import Link from 'next/link'
         >
           <Github size={20} />
         </Link>
-       </div>
-       <div>
-       <Link
+      </motion.div>
+
+      <motion.div
+        animate={bounceKeyframes}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: 0.15,
+        }}
+      >
+        <Link
           href="https://www.linkedin.com/in/shahman-riaz"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,8 +54,18 @@ import Link from 'next/link'
         >
           <Linkedin size={20} />
         </Link>
-       </div>
-        <div>
+      </motion.div>
+
+      <motion.div
+        animate={bounceKeyframes}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: 0.3,
+        }}
+      >
         <Link
           href="https://x.com/smn_riaz"
           target="_blank"
@@ -39,28 +74,44 @@ import Link from 'next/link'
         >
           <Twitter size={20} />
         </Link>
-        </div>
-        <div>
+      </motion.div>
+
+      <motion.div
+        animate={bounceKeyframes}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: 0.45,
+        }}
+      >
         <Link
           href="mailto:shahmanriaz07@gmail.com"
           className="text-white hover:text-pink-500 transition"
         >
           <Mail size={20} />
         </Link>
-        </div>
-        <div>
+      </motion.div>
+
+      {/* 📞 Phone Icon */}
+      <motion.div
+        animate={bounceKeyframes}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+          delay: 0.75,
+        }}
+      >
         <Link
-          href="https://shahmanriaz.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-green-400 transition"
+          href="tel:+8801631214301"
+          className="text-white hover:text-yellow-400 transition"
         >
-          <Globe size={20} />
+          <Phone size={20} />
         </Link>
-        </div>
-      </div>
-    )
-  }
-  
-  export default SocialMedia
-  
+      </motion.div>
+    </div>
+  );
+}
