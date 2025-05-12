@@ -5,7 +5,6 @@ import {
   Linkedin,
   Twitter,
   Mail,
-  Globe,
   Phone,
 } from "lucide-react";
 

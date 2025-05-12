@@ -25,7 +25,7 @@ export default function Navbar() {
   const router = useRouter()
 
   return (
-    <nav className="bg-[#122041] border border-[#2e3c63] rounded-2xl shadow-2xl max-w-[1300] mx-auto px-6 py-3">
+    <nav className="bg-[#122041] shadow-2xl max-w-[1300] mx-auto px-6 py-3">
       <div className="flex items-center justify-between">
  
         <Link href="/" className="flex items-center gap-2">

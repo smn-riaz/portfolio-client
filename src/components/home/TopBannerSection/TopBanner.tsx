@@ -43,7 +43,7 @@ const TopBanner = () => {
   return (
     <section
       ref={bannerRef}
-      className="relative xl:min-h-screen bg-[#0A0E17] text-white overflow-hidden flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 lg:px-12 max-w-[1300] pt-24 sm:py-18 gap-12"
+      className="relative xl:min-h-screen bg-[#0A0E17] text-white overflow-hidden flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 lg:px-12 max-w-[1300] pt-24 p-10 sm:py-18 gap-12"
     >
       {/* Background gradients */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -111,20 +111,20 @@ const TopBanner = () => {
      <div className="lg:w-1/2 flex flex-col items-center lg:items-center text-center z-20 space-y-4 max-w-xl">
   {/* Name */}
   <h1
-    className="headline text-3xl mt-8 sm:text-5xl font-serif font-bold text-white tracking-tight"
-    style={{ textShadow: "0 12px 15px rgba(255, 255, 255, 0.35)" }}
+    className="headline text-4xl mt-8 sm:text-5xl font-serif font-bold text-white tracking-tight"
+    style={{ textShadow: "0 5px 15px rgba(255, 255, 255, 0.35)" }}
   >
     Shahman Riaz
   </h1>
 
   {/* Role & Title */}
   <div className="w-full flex justify-center">
-    <div className="space-y-2 py-4 text-center">
-      <p className="text-base sm:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3F76FF] to-[#BE29EC] tracking-wide">
-        ❝ Frontend Developer  ❞
+    <div className="space-y-3 pb-3 text-center">
+      <p className="text-[25px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#3F76FF] to-[#BE29EC] tracking-wide">
+        ❝Frontend Developer❞
         
       </p>
-      <p className="text-base sm:text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6F61] to-[#3F76FF] tracking-wide">
+      <p className="text-[18px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6F61] to-[#3F76FF] tracking-wide">
        MERN Stack Enthusiast
       </p>
       
