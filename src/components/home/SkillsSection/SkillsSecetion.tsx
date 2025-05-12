@@ -10,7 +10,6 @@ import {
   FaLightbulb,
   FaHandsHelping,
   FaPuzzlePiece,
-  FaSearch,
   FaPlane,
   FaBookOpen,
 } from "react-icons/fa";
@@ -24,7 +23,6 @@ const softSkills = [
   { skill: "Patience", icon: <FaHandsHelping className="text-yellow-400" /> },
   { skill: "Critical Thinking", icon: <FaLightbulb className="text-yellow-400" /> },
   { skill: "Problem-Solving Mindset", icon: <FaPuzzlePiece className="text-yellow-400" /> },
-  { skill: "Always Try to Solve Problems", icon: <FaSearch className="text-yellow-400" /> },
   { skill: "Love Solving Programming Challenges", icon: <FaLightbulb className="text-yellow-400" /> },
 ];
 
